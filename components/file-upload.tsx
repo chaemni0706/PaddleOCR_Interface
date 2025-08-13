@@ -43,8 +43,7 @@ export function FileUpload({ onFileSelect, accept = ".pdf", maxSize = 10, disabl
         if (onFileSelect) {
           onFileSelect(file)
         } else {
-          // Default behavior: navigate to process page
-          router.push("/process")
+          router.push(`/process?file=${encodeURIComponent(file.name)}`)
         }
       }
     },
